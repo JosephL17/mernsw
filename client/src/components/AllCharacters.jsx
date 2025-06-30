@@ -1,28 +1,22 @@
-import React from "react";
+import React from 'react'
+import { useState } from 'react'
+
 
 const Character = () => {
-    return()
+  const [characters, setCharacters] = useState([]);
 
-    async function getCharacters() {
-      
-    
-      try {
-        const fetchedCharacters = await fetch(url)
-          .then(res => res.json())
-        characters.push(...fetchedCharacters);
-      }
-      catch (ex) {
-        console.error("Error reading characters.", ex.message);
-      }
-      console.log("All the characters are ", characters)
-      renderCharacters(characters);
-    }
-        
-      
-      
-      
-      
+  const fetchCharacters = async() => {
+    const data = await fetch("http://localhost:3000/").then(res => res.json());
+    console.log(data)
+  }
 
+  fetchCharacters();
 
-
+  return (
+    <>
+      
+    </>
+  )
 }
+
+export default Character
