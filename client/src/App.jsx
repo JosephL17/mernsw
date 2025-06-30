@@ -1,4 +1,5 @@
 import './App.css'
+import AllCharacters from './components/AllCharacters'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
            autoComplete="off" />
         </div>
         <section id="charactersList">
+          <AllCharacters />
         </section>
       </div>
     </>
