@@ -33,9 +33,11 @@ async function getCharacter(id) {
 
 }
 async function fetchCharacter(id) {
-  let characterUrl = `${baseUrl}/characters/${id}`;
-  return await fetch(characterUrl)
-    .then(res => res.json())
+  // let characterUrl = `${baseUrl}/characters/${id}`;
+  // return await fetch(characterUrl)
+  //   .then(res => res.json())
+
+  
 }
 
 async function fetchHomeworld(character) {
