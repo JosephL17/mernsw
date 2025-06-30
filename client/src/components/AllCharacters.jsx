@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 
-const Character = () => {
+const AllCharacters = () => {
   const [characters, setCharacters] = useState([]);
 
   const fetchCharacters = async() => {
@@ -19,4 +19,4 @@ const Character = () => {
   )
 }
 
-export default Character
+export default AllCharacters
