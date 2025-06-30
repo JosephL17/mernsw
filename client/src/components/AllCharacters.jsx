@@ -20,9 +20,9 @@ const AllCharacters = () => {
   
   return (
 
-      <div>
+      <div className="Character-container">
         {characters.map(character => {
-          <a href="">{character.name}</a>
+          return <a className='Charcter-name' href="" key={character.id}>{character.name}</a>
         })}
       </div>
     
