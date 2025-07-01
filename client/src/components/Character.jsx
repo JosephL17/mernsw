@@ -1,29 +1,12 @@
 
-// import React from "react";
+import React from "react";
+import { useNavigate } from 'react-router-dom'
 
-// const Character = () => {
-//     return()
+const Character = (data) => {
+    return(
+        <a className='Charcter-name' href="" key={data._id}>{data.name}</a>
+    )
 
-//     async function getCharacters() {
-      
-    
-//       try {
-//         const fetchedCharacters = await fetch(url)
-//           .then(res => res.json())
-//         characters.push(...fetchedCharacters);
-//       }
-//       catch (ex) {
-//         console.error("Error reading characters.", ex.message);
-//       }
-//       console.log("All the characters are ", characters)
-//       renderCharacters(characters);
-//     }
-        
-      
-      
-      
-      
+}
 
-
-
-// }
+export default Character;
