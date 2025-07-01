@@ -122,14 +122,28 @@ section#films a {
   border: 1px solid var(--dark2);
 } */ */
 
-.Character-container {
+.app-container {
   display: flex;
   flex-wrap: wrap;
-  background-color: lightblue;
 }
 
-.Character-name {
+.character-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  color: darkblue;
+}
+
+#character-name {
   color: darkblue;
   padding: 10px;
   border-radius: 20px;
+  background-color: lightblue;
+  font-weight: bolder;
+}
+
+#charactersList {
+  display: flex;
+  flex-wrap: wrap;
+
 }

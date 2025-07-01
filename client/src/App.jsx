@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='app-continer'>
         <div>
           <h1>Star Wars Universe Lookup</h1>
           <label htmlFor="searchString">
