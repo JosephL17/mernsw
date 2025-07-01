@@ -16,6 +16,7 @@ app.use(cors()) // enable CORS for all routes
 app.use(express.json());
 
 
+
 app.get('/api/character', async (req, res) => {
     try {
     const client = await MongoClient.connect(url);
