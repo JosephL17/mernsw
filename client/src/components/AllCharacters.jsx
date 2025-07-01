@@ -19,19 +19,14 @@ const AllCharacters = () => {
   console.log(characters);
 
   return (
-    {
+    
       <div className="Character-container">
         {characters.map(character => {
           return <p className='Charcter-name' key={character.id}>{character.name}</p>
         })}
       </div>
-    
-        fetch('http://localhost:3000/api/character')
-          .then((response) => response.json())
-          .then((body) => setCharacters(body))
-          .catch((err) => {
-            throw new Error('Data could not be fetched!');
-          });
-  }, []);      
+      
+    )
+}   
 
 export default AllCharacters;
