@@ -11,9 +11,9 @@ const AllCharacters = () => {
         fetch('http://localhost:3000/api/character')
           .then((response) => response.json())
           .then((body) => setCharacters(body))
-          // .catch((err) => {
-          // //   throw new Error('Data could not be fetched!');
-          // });
+          .catch((err) => {
+            throw new Error('Data could not be fetched!');
+          });
   }, []);      
 
   console.log(characters);

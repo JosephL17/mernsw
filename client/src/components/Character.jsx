@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Character = (data) => {
     return(
-        <div>{data.name}</div>
+        <a className='Charcter-name' href="" key={data._id}>{data.name}</a>
     )
 
 }
