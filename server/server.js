@@ -30,6 +30,20 @@ app.get('/api/character', async (req, res) => {
     }
 })
 
+app.get('/api/character/:id', async (req, res) => {
+    try {
+    const { id } = req.params
+    const client = await MongoClient.connect(url);
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
+    const character = await collection.find({'id' : id}).toArray();
+    res.json(character);
+    } catch (err) {
+        console.error("Error: ", err);
+        res.status(500).send('Something went wrong!')
+    }
+})
+
 
 app.get('/api/planets/:id', async(req, res) => {
     try {
