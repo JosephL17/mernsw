@@ -1,4 +1,4 @@
-body,
+/* body,
 div,
 h1,
 h2,
@@ -20,11 +20,11 @@ p {
   color: var(--dark1);
 } */
 
-button {
+/* button {
   background-color: var(--light2);
   color: var(--dark2);
-  font-weight: bold;
-  padding: 10px;
+  font-weight: bold; */
+  /* padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--dark2);
 }
@@ -52,7 +52,7 @@ label {
 }
 
 /* Characters */
-#charactersList {
+/* #charactersList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -67,14 +67,14 @@ label {
   color: var(--dark2);
   background-color: var(--light2);
   font-weight: bold;
-}
+} */
 
-/* Character page */
+/* Character page
 h1#name {
   margin: 50px;
-}
+} */
 
-#generalInfo {
+/* #generalInfo {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -97,9 +97,9 @@ section#planets,
 section#characters,
 section#films {
   margin: 50px;
-}
+} */ */
 
-section#planets ul,
+/* section#planets ul,
 section#characters ul,
 section#films ul {
   list-style-type: none;
@@ -120,4 +120,16 @@ section#films a {
   margin: 10px;
   border-radius: 5px;
   border: 1px solid var(--dark2);
+} */ */
+
+.Character-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: lightblue;
+}
+
+.Character-name {
+  color: darkblue;
+  padding: 10px;
+  border-radius: 20px;
 }

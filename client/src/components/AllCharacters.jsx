@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import '../App.css'
 
 
 const AllCharacters = () => {
@@ -22,7 +23,7 @@ const AllCharacters = () => {
 
       <div className="Character-container">
         {characters.map(character => {
-          return <a className='Charcter-name' href="" key={character.id}>{character.name}</a>
+          return <p className='Charcter-name' key={character.id}>{character.name}</p>
         })}
       </div>
     
