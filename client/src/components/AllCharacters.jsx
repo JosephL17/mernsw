@@ -1,10 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import '../App.css'
+import Character from './Character'
+import {Link} from "react-router-dom";
 
 
 const AllCharacters = () => {
   let [characters, setCharacters] = useState([])
+  // const navigate = useNavigate();
 
   useEffect(() => {
 
@@ -20,13 +23,19 @@ const AllCharacters = () => {
 
   return (
 
+
     <div className="character-container">
       {characters.map(character => {
-        return <p id='character-name' key={character.id}>{character.name}</p>
+        return <div id='character-name' key={character._id}>
+                  <Link to={`character/${character.id}`}>{character.name}
+                  </Link>
+                </div>
       })}
     </div>
 
   )
 }
+
+ 
 
 export default AllCharacters;
