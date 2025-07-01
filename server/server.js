@@ -37,6 +37,9 @@ app.get('/api/character/:id', async (req, res) => {
     const db = client.db(dbName);
     const collection = db.collection(collectionName);
     const character = await collection.find({'id' : id}).toArray();
+
+    console.log(character);
+
     res.json(character);
     } catch (err) {
         console.error("Error: ", err);
