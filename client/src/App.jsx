@@ -1,5 +1,7 @@
 import './App.css'
 import AllCharacters from './components/AllCharacters'
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import Character from './components/Character';
 
 function App() {
 
@@ -16,7 +18,12 @@ function App() {
            autoComplete="off" />
         </div>
         <section id="charactersList">
-          <AllCharacters />
+          <BrowserRouter>
+          <Routes>
+          <Route path='/' element={<AllCharacters/>}/>
+          <Route path='/character/:id' element={<Character/>}/>
+          </Routes>
+          </BrowserRouter>
         </section>
       </div>
     </>
