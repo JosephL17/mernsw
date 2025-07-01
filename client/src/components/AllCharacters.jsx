@@ -4,21 +4,20 @@ import '../App.css'
 
 
 const AllCharacters = () => {
-  const [characters, setCharacters] = useState([]);
- 
- 
-  useEffect(() => {
-    fetchCharacters()
-  }, []);
+  let [characters, setCharacters] = useState([])
 
-  const fetchCharacters = async() => {
-    const data = await fetch("http://localhost:3000/").then(res => res.json());
-    setCharacters(data);
-    // console.log(characters.name);
-  }
-  
-  
-  
+  useEffect(() => {
+    
+        fetch('http://localhost:3000/api/character')
+          .then((response) => response.json())
+          .then((body) => setCharacters(body))
+          .catch((err) => {
+            throw new Error('Data could not be fetched!');
+          });
+  }, []);      
+
+  console.log(characters);
+
   return (
 
       <div className="Character-container">
@@ -30,4 +29,4 @@ const AllCharacters = () => {
   )
 }
 
-export default AllCharacters
+export default AllCharacters;
