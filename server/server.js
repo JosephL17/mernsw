@@ -19,11 +19,11 @@ app.use(express.json());
 
 app.get('/api/character', async (req, res) => {
     try {
-    const client = await MongoClient.connect(url);
-    const db = client.db(dbName);
-    const collection = db.collection(collectionName);
-    const characters = await collection.find({}).toArray();
-    res.json(characters);
+        const client = await MongoClient.connect(url);
+        const db = client.db(dbName);
+        const collection = db.collection(collectionName);
+        const characters = await collection.find({}).toArray();
+        res.json(characters);
     } catch (err) {
         console.error("Error: ", err);
         res.status(500).send('Something went wrong!')
@@ -46,6 +46,23 @@ app.get('/api/character/:id', async (req, res) => {
         res.status(500).send('Something went wrong!')
     }
 })
+
+
+app.get('/api/planets/:id', async(req, res) => {
+    try {
+        const { id } = req.params;
+        const client = await MongoClient.connect(url);
+        const db = client.db(dbName);
+        const collection = db.collection('planets');
+        const planet = await collection.findOne({ 'id' : parseInt(id) });
+        res.json(planet);
+    } catch (err) {
+        console.log("ERROR: ", err);
+        res.status(500).send("ERROR GETTING PLANET");
+    }
+})
+
+
 
 
 app.listen(PORT, () => {
