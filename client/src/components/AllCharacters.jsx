@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Character from './character'
+import '../App.css'
 
 
 const AllCharacters = () => {
@@ -19,13 +19,19 @@ const AllCharacters = () => {
   console.log(characters);
 
   return (
-    <>
-      {characters.map((character) => (
-        <Character key={character._id} data={character} />
-      ))}
-    </>
-  );
-};
-
+    {
+      <div className="Character-container">
+        {characters.map(character => {
+          return <p className='Charcter-name' key={character.id}>{character.name}</p>
+        })}
+      </div>
+    
+        fetch('http://localhost:3000/api/character')
+          .then((response) => response.json())
+          .then((body) => setCharacters(body))
+          .catch((err) => {
+            throw new Error('Data could not be fetched!');
+          });
+  }, []);      
 
 export default AllCharacters;
